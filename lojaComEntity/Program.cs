@@ -11,17 +11,23 @@ namespace lojaComEntity
     {
         static void Main(string[] args)
         {
-            EntidadesContext contexto = new EntidadesContext();
+            UsuarioDao usuarioDao = new UsuarioDao();
 
-            Usuario usuario = new Usuario()
+            /*Usuario usuario = new Usuario()
             {
-                Nome = "Rafaela",
-                Senha = "123"
+                Nome = "Giovanni",
+                Senha = "345"
             };
+            
+             *  manipulador.Salva(usuario);
+             */
 
-            contexto.Usuarios.Add(usuario);
-            contexto.SaveChanges();
-            contexto.Dispose();
+            Usuario usuario = usuarioDao.BuscaPorId(2);
+            usuarioDao.Remove(usuario);
+            
+            Console.Write("Removeu o usuário ");
+            Console.ReadLine();
+
         }
     }
 }
