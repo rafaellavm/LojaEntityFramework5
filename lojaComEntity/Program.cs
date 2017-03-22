@@ -58,14 +58,26 @@ namespace lojaComEntity
             Console.ReadLine(); */
 
             //Include : inclui os produtos
-            var categoria = contexto.Categorias.Include(c => c.produtos).FirstOrDefault(c => c.ID == 1);
+            /*var categoria = contexto.Categorias.Include(c => c.produtos).FirstOrDefault(c => c.ID == 1);
 
             foreach (var p in categoria.produtos)
             {
                 Console.WriteLine(p.Nome);
+            } */
+
+            decimal precoMinimo = 40;
+            var busca = from p in contexto.Produtos
+                        where p.Categoria.Nome == "Roupas" && p.Preco > precoMinimo
+                        orderby p.Preco
+                        select p;
+            IList<Produto> resultado = busca.ToList();
+
+            foreach (var p in resultado)
+            {
+                Console.WriteLine(p.Nome + " - " + p.Preco);
             }
 
-            Console.ReadLine();
+            Console.ReadLine(); 
 
         }
     }
