@@ -65,7 +65,7 @@ namespace lojaComEntity
                 Console.WriteLine(p.Nome);
             } */
 
-            decimal precoMinimo = 40;
+            /*decimal precoMinimo = 40;
             var busca = from p in contexto.Produtos
                         where p.Categoria.Nome == "Roupas" && p.Preco > precoMinimo
                         orderby p.Preco
@@ -75,6 +75,16 @@ namespace lojaComEntity
             foreach (var p in resultado)
             {
                 Console.WriteLine(p.Nome + " - " + p.Preco);
+            } */
+
+            ProdutoDAO produtodao = new ProdutoDAO(contexto);
+
+            var resultado = produtodao.BuscaPorNomePrecoNomeCategoria(null,0, "Roupas");
+
+
+            foreach (var p in resultado)
+            {
+                Console.WriteLine(p.Nome);
             }
 
             Console.ReadLine(); 

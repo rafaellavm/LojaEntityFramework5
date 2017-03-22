@@ -141,6 +141,7 @@
     <Compile Include="Migrations\20170321195530_CriaProdutoECategoria.designer.cs">
       <DependentUpon>20170321195530_CriaProdutoECategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProdutoDAO.cs" />
     <Compile Include="UsuarioDao.cs" />
     <Compile Include="Migrations\20170320205817_criaUsuario.cs" />
     <Compile Include="Migrations\20170320205817_criaUsuario.designer.cs">
