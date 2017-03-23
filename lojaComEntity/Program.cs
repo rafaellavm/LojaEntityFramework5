@@ -77,7 +77,7 @@ namespace lojaComEntity
                 Console.WriteLine(p.Nome + " - " + p.Preco);
             } */
 
-            ProdutoDAO produtodao = new ProdutoDAO(contexto);
+            /*ProdutoDAO produtodao = new ProdutoDAO(contexto);
 
             var resultado = produtodao.BuscaPorNomePrecoNomeCategoria(null,0, "Roupas");
 
@@ -85,6 +85,42 @@ namespace lojaComEntity
             foreach (var p in resultado)
             {
                 Console.WriteLine(p.Nome);
+            }*/
+
+            /*UsuarioDao usuariodao = new UsuarioDao();
+            Usuario rafaela = usuariodao.BuscaPorId(1);
+
+            Venda v = new Venda()
+            {
+                cliente = rafaela
+            };
+            
+            Produto produto = contexto.Produtos.FirstOrDefault(p => p.ID == 1);
+            Produto produto2 = contexto.Produtos.FirstOrDefault(p => p.ID == 2);
+
+            ProdutoVenda pv = new ProdutoVenda()
+            {
+                Venda = v,
+                Produto = produto
+            };
+
+            ProdutoVenda pv2 = new ProdutoVenda()
+            {
+                Venda = v,
+                Produto = produto2
+            };
+
+            contexto.Vendas.Add(v);
+            contexto.ProdutoVenda.Add(pv);
+            contexto.ProdutoVenda.Add(pv2);
+
+            contexto.SaveChanges(); */
+
+            Venda v = contexto.Vendas.Include(vp => vp.ProdutoVenda).FirstOrDefault(v2 => v2.ID == 1);
+
+            foreach (var pv in v.ProdutoVenda)
+            {
+                Console.WriteLine(pv.Produto.Nome);
             }
 
             Console.ReadLine(); 

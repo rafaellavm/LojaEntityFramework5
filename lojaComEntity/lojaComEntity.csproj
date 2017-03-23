@@ -131,7 +131,9 @@
     <Compile Include="Entitades\Categoria.cs" />
     <Compile Include="Entitades\EntidadesContext.cs" />
     <Compile Include="Entitades\Produto.cs" />
+    <Compile Include="Entitades\ProdutoVenda.cs" />
     <Compile Include="Entitades\Usuario.cs" />
+    <Compile Include="Entitades\Venda.cs" />
     <Compile Include="lojaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +142,10 @@
     <Compile Include="Migrations\20170321195530_CriaProdutoECategoria.cs" />
     <Compile Include="Migrations\20170321195530_CriaProdutoECategoria.designer.cs">
       <DependentUpon>20170321195530_CriaProdutoECategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170323193436_criaVenda.cs" />
+    <Compile Include="Migrations\20170323193436_criaVenda.designer.cs">
+      <DependentUpon>20170323193436_criaVenda.cs</DependentUpon>
     </Compile>
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="UsuarioDao.cs" />

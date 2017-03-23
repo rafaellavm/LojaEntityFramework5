@@ -18,5 +18,8 @@ namespace lojaComEntity.Entitades
         //pra fazer a ligação
         public int CategoriaID { get; set; }
 
+        //relacionamento de muitos para muitos, a partir do Entity 6 tem que ser feito dessa maneira
+        public virtual IList<ProdutoVenda> ProdutoVenda { get; set; }
+
     }
 }
