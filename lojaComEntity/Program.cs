@@ -116,12 +116,35 @@ namespace lojaComEntity
 
             contexto.SaveChanges(); */
 
-            Venda v = contexto.Vendas.Include(vp => vp.ProdutoVenda).FirstOrDefault(v2 => v2.ID == 1);
+            /*Venda v = contexto.Vendas
+                            .Include(vp => vp.ProdutoVenda)
+                            .ThenInclude(pv => pv.Produto)
+                            .FirstOrDefault(v2 => v2.ID == 1);
 
             foreach (var pv in v.ProdutoVenda)
             {
                 Console.WriteLine(pv.Produto.Nome);
-            }
+            } */
+
+            PessoaFisica pf = new PessoaFisica()
+            {
+                Nome = "Elaine",
+                CPF = "05506703783",
+                Senha = "123"
+            };
+
+            contexto.PessoaFisica.Add(pf);
+
+            PessoaJuridica pj = new PessoaJuridica()
+            {
+                Nome = "Indústrias Valentine",
+                CNPJ = "123454353331",
+                Senha = "323"
+            };
+
+            contexto.PessoaJuridica.Add(pj);
+
+            contexto.SaveChanges();
 
             Console.ReadLine(); 
 

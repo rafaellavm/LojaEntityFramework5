@@ -17,6 +17,8 @@ namespace lojaComEntity.Entitades
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<ProdutoVenda> ProdutoVenda { get; set; }
+        public DbSet<PessoaFisica> PessoaFisica { get; set; }
+        public DbSet<PessoaJuridica> PessoaJuridica { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

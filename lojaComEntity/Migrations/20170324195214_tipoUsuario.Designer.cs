@@ -8,9 +8,10 @@ using lojaComEntity.Entitades;
 namespace lojaComEntity.Migrations
 {
     [DbContext(typeof(EntidadesContext))]
-    partial class EntidadesContextModelSnapshot : ModelSnapshot
+    [Migration("20170324195214_tipoUsuario")]
+    partial class tipoUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -93,7 +94,7 @@ namespace lojaComEntity.Migrations
                 {
                     b.HasBaseType("lojaComEntity.Entitades.Usuario");
 
-                    b.Property<string>("CNPJ");
+                    b.Property<int>("CPNJ");
 
                     b.HasAnnotation("Relational:DiscriminatorValue", "PessoaJuridica");
                 });

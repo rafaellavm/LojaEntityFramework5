@@ -130,6 +130,8 @@
   <ItemGroup>
     <Compile Include="Entitades\Categoria.cs" />
     <Compile Include="Entitades\EntidadesContext.cs" />
+    <Compile Include="Entitades\PessoaFisica.cs" />
+    <Compile Include="Entitades\PessoaJuridica.cs" />
     <Compile Include="Entitades\Produto.cs" />
     <Compile Include="Entitades\ProdutoVenda.cs" />
     <Compile Include="Entitades\Usuario.cs" />
@@ -146,6 +148,14 @@
     <Compile Include="Migrations\20170323193436_criaVenda.cs" />
     <Compile Include="Migrations\20170323193436_criaVenda.designer.cs">
       <DependentUpon>20170323193436_criaVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170324195214_tipoUsuario.cs" />
+    <Compile Include="Migrations\20170324195214_tipoUsuario.designer.cs">
+      <DependentUpon>20170324195214_tipoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170324201343_tiposUsuario.cs" />
+    <Compile Include="Migrations\20170324201343_tiposUsuario.designer.cs">
+      <DependentUpon>20170324201343_tiposUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="UsuarioDao.cs" />
